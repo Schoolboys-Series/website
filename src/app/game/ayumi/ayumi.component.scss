@@ -1,0 +1,249 @@
+@import '../../../styles.scss';
+
+.background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to bottom, lighten($color-primary, 50%), lighten($color-primary, 20%));
+}
+
+.downloader {
+    display: flex;
+    margin: 20px 0 20px 0;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (min-width: $responsive-min-width) {
+        width: 80%;
+        max-width: 1024px;
+        min-width: 300px;
+    }
+
+    @media screen and (max-width: $responsive-max-width) {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    img {
+        margin: 0 10px 0 10px;
+        max-width: 200px;
+    }
+}
+
+.container {
+    box-shadow: 0 0 5px $color-primary;
+    border-radius: 5px;
+    overflow: hidden;
+
+    @media screen and (min-width: $responsive-min-width) {
+        width: 80%;
+        max-width: 1024px;
+        min-width: 300px;
+    }
+
+    @media screen and (max-width: $responsive-max-width) {
+        width: 100%;
+    }
+
+    .introduction {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 100px;
+        position: relative;
+
+        .gallery {
+            transform: rotate(-5deg);
+        }
+
+        .hint {
+            text-shadow: 0 0 5px $color-primary, 0 0 2px $color-primary, 0 0 3px $color-primary, 1px 1px 1px $color-primary;
+            color: lighten($color-primary, 40%);
+            text-align: left;
+            width: 100%;
+            padding-left: 50px;
+
+            @media (max-width: $responsive-max-width) {
+                margin-top: 80px;
+                font-size: 20px;
+            }
+
+            @media (min-width: $responsive-min-width) {
+                margin-top: 120px;
+                font-size: 40px;
+            }
+
+            margin-bottom: 10px;
+        }
+
+        .step {
+            background-image: url('../../../assets/ayumi_step.png');
+            background-repeat: repeat-x;
+            width: 1600px;
+            height: 40px;
+
+            @media (max-width: $responsive-max-width) {
+                margin-top: 150px;
+            }
+
+            @media (min-width: $responsive-min-width) {
+                margin-top: 300px;
+            }
+
+            transform: rotate(-20deg);
+            opacity: 0.3;
+        }
+
+        .content {
+            position: absolute;
+            z-index: 11;
+
+            @media (max-width: $responsive-max-width) {
+                font-size: 16px;
+            }
+
+            @media (min-width: $responsive-min-width) {
+                font-size: 24px;
+            }
+
+            text-align: center;
+            text-shadow: 0 0 5px $color-primary,
+            0 0 2px $color-primary,
+            0 0 3px $color-primary,
+            1px 1px 1px $color-primary;
+            color: #FFFFFF;
+            width: 100%;
+        }
+    }
+
+    .manual {
+        margin-top: 100px;
+
+        .content {
+            font-size: 24px;
+            text-align: center;
+            text-shadow: 0 0 5px $color-accent, 0 0 2px $color-accent, 0 0 3px $color-accent, 1px 1px 1px $color-accent;
+            color: #FFFFFF;
+        }
+
+        .content-blue {
+            font-size: 24px;
+            text-align: center;
+            text-shadow: 0 0 5px $color-primary, 0 0 2px $color-primary, 0 0 3px $color-primary, 1px 1px 1px $color-primary;
+            color: #FFFFFF;
+            margin: 20px;
+        }
+
+        .label {
+            font-size: 20px;
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+            color: #FFFFFF;
+
+            @media (max-width: $responsive-max-width) {
+                width: 60%;
+            }
+
+            @media (min-width: $responsive-min-width) {
+                width: 30%;
+            }
+
+            &.label-blue {
+                background-image: linear-gradient(to right, $color-primary, $color-primary, rgba(0, 0, 0, 0));
+            }
+
+            &.label-red {
+                background-image: linear-gradient(to right, $color-warn, $color-warn, rgba(0, 0, 0, 0));
+            }
+        }
+
+        .description {
+            font-size: 18px;
+            color: #FFFFFF;
+            padding-left: 20px;
+
+            &.description-blue {
+                text-shadow: 0 0 2px $color-primary, 0 0 3px $color-primary, 1px 1px 1px $color-primary;
+            }
+
+            &.description-red {
+                text-shadow: 0 0 2px $color-warn, 0 0 3px $color-warn, 1px 1px 1px $color-warn;
+            }
+
+            .small {
+                font-size: 12px;
+            }
+        }
+
+        .gallery {
+            margin-bottom: 50px;
+
+            &.gallery-blue {
+                box-shadow: 0 0 8px $color-primary;
+            }
+
+            &.gallery-red {
+                box-shadow: 0 0 8px $color-warn;
+            }
+
+            &.gallery-retina {
+                @media (max-width: $responsive-max-width) {
+                    width: 720px;
+                }
+
+                @media (min-width: $responsive-min-width) {
+                    width: 1080px;
+                }
+            }
+        }
+
+        .character-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+
+            @media (min-width: 512px) {
+                border: 2px solid rgba(33, 134, 243, 0.2);
+                border-radius: 5px;
+                margin: 0 20px 50px 20px;
+                padding: 10px;
+            }
+
+            @media (max-width: $responsive-max-width) {
+                padding: 0;
+                margin: 0;
+                border: 0;
+            }
+
+            img {
+                @media (max-width: $responsive-max-width) {
+                    width: 90px;
+                    height: 90px;
+                }
+
+                @media (min-width: $responsive-min-width) {
+                    width: 185px;
+                    height: 185px;
+                }
+            }
+
+            p {
+                display: block;
+                width: 100%;
+                text-align: center;
+                text-shadow: 0 0 5px $color-primary, 0 0 2px $color-primary, 0 0 3px $color-primary, 1px 1px 1px $color-primary;
+                color: #FFFFFF;
+            }
+        }
+
+        button {
+            display: block;
+            width: 80%;
+            margin: 0 auto;
+            margin-bottom: 50px;
+        }
+    }
+}

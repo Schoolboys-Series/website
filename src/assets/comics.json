@@ -1,0 +1,8 @@
+{
+    "server": "https://raw.githubusercontent.com/WinUP/schoolboys/master/external_resources/comic/{name}.jpg",
+    "categoryNameFormat": "{url}/{index}",
+    "comics": [
+        { "type": "range", "min": 1, "max": 10, "fixLength": 3 },
+        { "type": "category", "name": "GAME OVER", "url": "GAME%20OVER", "count": 3, "fixLength": 3 }
+    ]
+}

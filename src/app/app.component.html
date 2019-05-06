@@ -1,0 +1,17 @@
+<div class="main-navigator">
+    <img class="main-logo" src="assets/logo.png" />
+    <mat-toolbar color="primary" class="main-toolbar">
+        <span class="placeholder"></span>
+        <button mat-button (click)="navigateTo('intro')">主页</button>
+        <button mat-button (click)="navigateTo('comic')">漫画</button>
+        <button mat-button [matMenuTriggerFor]="gameMenu">游戏</button>
+        <mat-menu #gameMenu="matMenu">
+            <button mat-menu-item disabled>梦之御咲祭篇</button>
+            <button mat-menu-item (click)="navigateTo('ayumi')">SCHOOLBOYS! 步</button>
+            <button mat-menu-item disabled>见习魔法师的小冒险</button>
+            <button mat-menu-item (click)="navigateTo('super_scb')">Super SCHOOLBOYS! RPG</button>
+        </mat-menu>
+        <button mat-button (click)="navigateTo('addon')">其他</button>
+    </mat-toolbar>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,62 @@
+@import '../../../styles.scss';
+
+:host {
+    display: block;
+    padding: 10px;
+}
+
+.container {
+    display: flex;
+
+    @media screen and (max-width: $responsive-max-width) {
+        flex-direction: column;
+    }
+}
+
+.right-area {
+    @media screen and (min-width: $responsive-min-width) {
+        margin-left: 20px;
+    }
+
+    img {
+        @media screen and (min-width: $responsive-min-width) {
+            max-width: 40vw;
+        }
+        @media screen and (max-width: $responsive-max-width) {
+            max-width: calc(100vw - 40px);
+        }
+    }
+}
+
+
+scb-panel {
+    display: block;
+    margin: 10px 0 10px 0;
+
+    button {
+        display: inline-block;
+        margin: 10px;
+    }
+
+    .source-code {
+        @media screen and (max-width: $responsive-max-width) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            a {
+                width: 100%;
+                display: flex;
+                text-decoration: none;
+
+                button {
+                    flex: 1 1 auto;
+                }
+            }
+        }
+    }
+}
+
+.advertisement {
+    min-width: 200px;
+}

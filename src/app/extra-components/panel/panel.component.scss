@@ -1,0 +1,29 @@
+@import '../../../styles.scss';
+
+mat-card {
+    padding: 0;
+    overflow: hidden;
+    mat-card-header {
+        /deep/ .mat-card-header-text {
+            margin: 0;
+        }
+        mat-card-title {
+            padding: 6px;
+            margin: 0;
+        }
+        &.background-primary, &.background-accent, &.background-warn {
+            mat-card-title {
+                color: #FFFFFF;
+            }
+        }
+        &.align-center {
+            justify-content: center;
+        }
+        &.align-right {
+            justify-content: end;
+        }
+    }
+    mat-card-content {
+        padding: 10px;
+    }
+}
