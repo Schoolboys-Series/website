@@ -6,6 +6,7 @@ script:
   - npm run build_prod
 before_deploy:
   - cd dist/schoolboys
+  - git init
 deploy:
   provider: azure_web_apps
   verbose: true
