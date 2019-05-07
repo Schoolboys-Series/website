@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - '11'
+install: npm install
+script:
+  - npm run build_prod
+before_deploy:
+  - cd dist/schoolboys
+deploy:
+  provider: azure_web_apps
+  username: $schoolboys
+  password:
+    secure: iZKIsHlkl4eviAoEOMJOcVpaevqXeSc7Za2985RWHh9WM4/u3Pi64TB5Y+VcUUOrNIjg+Nx518zc3fqETesRx6+fObBG0tIOq7GPlgnNdh3pqogocnq804Ngo/Mb/kMyfTLNVs3SvGWozHNyTa4B1E3e1IVJnNGzsWMKqBEZLAmsewEPup66MEjgq8rRepezejG8nrQ1/hhgxcwQuDOTo7hXBtQifthlfcS6CblYyhFP1XX1uDDkSFD3cWg/447ggXuyalVrOrorpF2oaQSQMlTPZ71QFwEikpwT/ShIy/RgPm6qLg/ADD9QuG1BJvQzWbpWJrpptTCWJf0smxbO+a1CkT+yrQsFTCDm41mrdf9WyLrNvnCMoFl2+42Sz7ZpKEf9sIy0n7BoILdeSGDNlJiBP6yfp/YqwRe79UL1LSFbjnPl0c/l+ujzdo5ACPWu7t5qJrIf6tlXUikfztG487cTkoObvzpqGpGJQ4GxPbNy3re31VZ1fegUF1T5eWTA92deIcQcAHy8I5eWCB9GJt9+Lp4RVe+0LYHN7sntPdlchektI76+7mFAT2qKRsTmPn0D9rBvurFB+4J5pJxGz+yKO+TzuG4/az9vMJ70pozRikERG7HDjhcfqQNwXIpxEW9nkqTPZmHCudmDMtyfhuE0eo+BVDiB/J1jVxdbs8U=
+  site: https://schoolboys.scm.azurewebsites.net:443/schoolboys.git
+  on:
+    branch: master
+  skip_cleanup: true
