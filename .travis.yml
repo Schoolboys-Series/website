@@ -8,6 +8,7 @@ before_deploy:
   - cd dist/schoolboys
 deploy:
   provider: azure_web_apps
+  verbose: true
   on:
     branch: master
   skip_cleanup: true
