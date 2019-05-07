@@ -8,7 +8,6 @@ before_deploy:
   - cd dist/schoolboys
 deploy:
   provider: azure_web_apps
-  site: https://schoolboys.scm.azurewebsites.net:443/schoolboys.git
   on:
     branch: master
   skip_cleanup: true
