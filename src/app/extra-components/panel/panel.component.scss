@@ -4,7 +4,7 @@ mat-card {
     padding: 0;
     overflow: hidden;
     mat-card-header {
-        /deep/ .mat-card-header-text {
+        ::ng-deep .mat-card-header-text {
             margin: 0;
         }
         mat-card-title {

@@ -137,5 +137,8 @@
       }
     }
   },
-  "defaultProject": "schoolboys"
+  "defaultProject": "schoolboys",
+  "cli": {
+    "analytics": "0b132da4-15ea-4f77-a444-686135ed89a8"
+  }
 }
