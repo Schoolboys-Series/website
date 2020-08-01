@@ -4,10 +4,10 @@
         <div>
             <p>舞台终于移动到幻想世界！与SCHOOLBOYS中的众多角色一起经历波澜壮阔的奇幻冒险！</p>
             <span class="hint">注意：本作目前仅支持日语</span>
-            <img src="assets/news_1.jpg" />
-            <img src="assets/news_2.jpg" />
-            <img src="assets/news_3.jpg" />
-            <img src="assets/news_4.jpg" />
+            <img alt="News1" src="assets/news_1.jpg" />
+            <img alt="News2" src="assets/news_2.jpg" />
+            <img alt="News3" src="assets/news_3.jpg" />
+            <img alt="News4" src="assets/news_4.jpg" />
         </div>
         <div class="system-require">
             <scb-panel title="基本信息" color="accent">
@@ -54,24 +54,33 @@
                     </mat-list-item>
                 </mat-list>
             </scb-panel>
-            <button mat-raised-button color="accent" class="download" (click)="download()"> 前往Freem!下载</button>
+            <button mat-raised-button color="accent" class="download" (click)="download('freem')">前往Freem!下载</button>
+            <button mat-raised-button color="accent" class="download" (click)="download('baidu')">
+                前往百度网盘下载 (提取码c788)
+            </button>
+            <button mat-raised-button color="accent" class="download" (click)="download('mega')">前往MEGA下载</button>
         </div>
     </div>
 </div>
 <div class="right-area">
     <scb-panel title="关于作者" titleAlign="center" color="primary" class="about-author">
         <div class="content">
-            <img src="assets/author_avatar.jpg" class="author-avatar" />
+            <img alt="Author" src="assets/author_avatar.jpg" class="author-avatar" />
             <p class="author-name">雾也 (30kiriya09)</p>
             <p class="author-intro">自2011年活跃的日本画师<br />现隶属于同人社团gymno<br />主要创作原创正太漫画等相关作品</p>
         </div>
     </scb-panel>
-    <a href="https://twitter.com/intent/follow?original_referer=http%3A%2F%2F2emegymnopedie.blog77.fc2.com%2Fblog-category-0.html&ref_src=twsrc%5Etfw&region=follow_link&screen_name=30kiriya09&tw_p=followbutton"
-        target="_blank" class="twitter-button"><i></i>关注他的推特</a>
-    <a href="http://2emegymnopedie.blog77.fc2.com" target="_blank" class="fc2-button">作者博客（境外）</a>
-    <a href="https://www.pixiv.net/member.php?id=370700" target="_blank" class="pixiv-button"><i></i>PIXIV</a>
-    <a href="https://enty.jp/30kiriya09" target="_blank" class="enty-button">
-        <img src="assets/author_enty_banner.jpg">
+    <a
+        href="https://twitter.com/intent/follow?original_referer=http%3A%2F%2F2emegymnopedie.blog77.fc2.com%2Fblog-category-0.html&ref_src=twsrc%5Etfw&region=follow_link&screen_name=30kiriya09&tw_p=followbutton"
+        target="_blank"
+        class="twitter-button"
+        rel="noopener noreferrer"
+        ><i></i>关注他的推特</a
+    >
+    <a href="http://2emegymnopedie.blog77.fc2.com" target="_blank" class="fc2-button" rel="noopener noreferrer">作者博客（境外）</a>
+    <a href="https://www.pixiv.net/member.php?id=370700" target="_blank" class="pixiv-button" rel="noopener noreferrer"><i></i>PIXIV</a>
+    <a href="https://enty.jp/30kiriya09" target="_blank" class="enty-button" rel="noopener noreferrer">
+        <img alt="Enty" src="assets/author_enty_banner.jpg" />
         <p>在Enty上支持他的创作活动！<br /><small>同时获得只在Enty上公开的额外资料和图片</small></p>
     </a>
 </div>

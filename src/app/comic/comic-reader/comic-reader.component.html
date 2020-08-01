@@ -5,10 +5,18 @@
 <div class="content">
     <div *ngIf="images.length == 0">
         <h1>SCHOOLBOYS! 中文版漫画仓库</h1>
-        <p><a href="https://github.com/WinUP/schoolboys_comic" target="_blank">这里</a>存储的是SCHOOLBOYS! 的中文版漫画，由某匿名汉化人员辛勤制作。</p>
+        <p>
+            这里存储的是SCHOOLBOYS! 的中文版漫画，由某匿名汉化人员辛勤制作。<br />你也可以访问
+            <a class="color-primary" href="https://tieba.baidu.com/f?kw=schoolboys&fr=index" target="_blank">百度贴吧</a>
+            获取更多信息。漫画内容托管在外部站点
+            <a class="color-primary" href="https://github.com/WinUP/schoolboys_comic" target="_blank">GitHub</a>
+            上，请确保你能访问
+            <b><a class="color-warn" href="https://raw.githubusercontent.com/Schoolboys-Series/comic/master/zh-cn/content.json" target="_blank">这个测试文件</a></b>
+            。
+        </p>
         <p>222话与之前剧情不连续（中间剧情位于游戏《SCHOOLBOYS! 步》内），浏览时请注意。</p>
         <p>汉化仅覆盖大部分无偿公开的内容，商业书籍或相关盈利项目不属于汉化范围，请见谅。</p>
-        <p class="color-primary">从目录选择一项开始阅读</p>
+        <p class="color-primary">从左侧的目录选择一项开始阅读</p>
     </div>
     <div *ngFor="let item of images; let i = index">
         <img src="{{item}}" />
