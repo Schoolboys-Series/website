@@ -15,7 +15,7 @@ export class IntroPageComponent {
                 window.open('https://pan.baidu.com/s/1CVZg1gxNv8-tE5SDg4bx8A', '_blank');
                 break;
             case 'mega':
-                window.open('https://mega.nz/file/MB4mgCpR', '_blank');
+                window.open('https://mega.nz/file/MB4mgCpR#o27MmejDONjutoKmKUU-DvTljQOGdTKxQoSCw3_8i2U', '_blank');
                 break;
         }
     }
