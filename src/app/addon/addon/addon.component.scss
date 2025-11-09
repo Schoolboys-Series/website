@@ -21,6 +21,7 @@
     img {
         @media screen and (min-width: $responsive-min-width) {
             max-width: 40vw;
+            max-height: 60vh;
         }
         @media screen and (max-width: $responsive-max-width) {
             max-width: calc(100vw - 40px);
