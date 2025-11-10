@@ -65,3 +65,7 @@ body { margin: 0; font-family: 'Microsoft YaHei UI', sans-serif; }
 .color-warn {
     color: $color-warn;
 }
+
+.mat-card-header-text {
+    padding: 0 10px;
+}

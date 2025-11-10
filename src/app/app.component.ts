@@ -23,8 +23,11 @@ export class AppComponent {
             case 'super_scb':
                 this.router.navigate([`/game/super_scb`]);
                 break;
+            case 'misakisai':
+                this.router.navigate([`/game/misakisai`]);
+                break;
             case 'addon':
-            this.router.navigate(['/addon']);
+                this.router.navigate(['/addon']);
                 break;
         }
     }

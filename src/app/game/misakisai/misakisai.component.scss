@@ -1,0 +1,48 @@
+@import '../../../styles.scss';
+
+.content {
+    display: flex;
+    padding: 10px;
+    margin-top: 10px;
+    justify-content: center;
+
+    img {
+        max-width: 500px;
+        display: block;
+        align-self: center;
+    }
+
+    .hint {
+        display: inline-block;
+        color: darken($color: #FFFFFF, $amount: 30);
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    @media screen and (max-width: 1024px) {
+        flex-direction: column;
+    }
+
+    .description {
+        @media screen and (min-width: $responsive-min-width) {
+            margin: 0 0 0 20px;
+        }
+
+        .system-require {
+            width: fit-content;
+
+            scb-panel {
+                display: block;
+                margin-bottom: 10px;
+                margin-top: 10px;
+            }
+
+            .download {
+                display: block;
+                color: #FFFFFF;
+                width: 100%;
+                margin: 5px 0 5px 0;
+            }
+        }
+    }
+}
