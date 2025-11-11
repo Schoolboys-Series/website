@@ -5,9 +5,9 @@
     [class.hide]="hideComicList"
     [style.height.px]="comicListHeight"
     (choose)="onComicChoose($event)"></scb-comic-list>
-<div class="list-button" (click)="hideComicList = !hideComicList">
+<button type="button" class="list-button" (click)="hideComicList = !hideComicList">
     <i></i>
-</div>
+</button>
 <div class="content">
     <div *ngIf="images.length === 0">
         <h1>SCHOOLBOYS! 中文版漫画仓库</h1>
@@ -35,7 +35,7 @@
         <p class="color-primary">从左侧的目录选择一项开始阅读</p>
     </div>
     <div *ngFor="let item of images; let i = index">
-        <img src="{{ item }}" />
+        <img src="{{ item }}" alt="page_{{ i + 1 }}" />
         <span class="page-number">{{ i + 1 }} / {{ images.length }}</span>
     </div>
     <div *ngIf="images.length > 0" class="placeholder">
