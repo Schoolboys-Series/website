@@ -1,10 +1,10 @@
 <mat-card>
     <mat-card-header
-        [class.background-primary]="color == 'primary'"
-        [class.background-accent]="color == 'accent'"
-        [class.background-warn]="color == 'warn'"
-        [class.align-center]="titleAlign == 'center'"
-        [class.align-right]="titleAlign == 'right'">
+        [class.background-primary]="color === 'primary'"
+        [class.background-accent]="color === 'accent'"
+        [class.background-warn]="color === 'warn'"
+        [class.align-center]="titleAlign === 'center'"
+        [class.align-right]="titleAlign === 'right'">
         <mat-card-title *ngIf="title">{{ title }}</mat-card-title>
     </mat-card-header>
     <mat-card-content>

@@ -1,5 +1,5 @@
-<p *ngIf="comicList == null">加载漫画数据……</p>
-<mat-list *ngIf="comicList != null">
+<p *ngIf="comicList === null">加载漫画数据……</p>
+<mat-list *ngIf="comicList !== null">
     <mat-list-item *ngFor="let item of comicList!.comics" (click)="onClickListItem(item)" [class.active]="activeComic === item">{{
         createComicName(item)
     }}</mat-list-item>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'scb-addon',
@@ -6,8 +6,6 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./addon.component.scss'],
     standalone: false
 })
-export class AddonComponent implements OnInit {
+export class AddonComponent {
     constructor() {}
-
-    ngOnInit() {}
 }

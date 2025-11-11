@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
     standalone: false
 })
 export class AppComponent {
-    public constructor(private router: Router) {}
+    private router = inject(Router);
 
     public navigateTo(target: string): void {
         switch (target) {
@@ -19,13 +19,13 @@ export class AppComponent {
                 this.router.navigate(['/comic']);
                 break;
             case 'ayumi':
-                this.router.navigate([`/game/ayumi`]);
+                this.router.navigate(['/game/ayumi']);
                 break;
             case 'super_scb':
-                this.router.navigate([`/game/super_scb`]);
+                this.router.navigate(['/game/super_scb']);
                 break;
             case 'misakisai':
-                this.router.navigate([`/game/misakisai`]);
+                this.router.navigate(['/game/misakisai']);
                 break;
             case 'addon':
                 this.router.navigate(['/addon']);

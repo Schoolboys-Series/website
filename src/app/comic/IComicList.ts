@@ -1,24 +1,24 @@
 export interface IComicList {
-    server: string;
-    categoryNameFormat: string;
-    comics: (IComicCategory | IComicRange)[];
+    server: string
+    categoryNameFormat: string
+    comics: (IComicCategory | IComicRange)[]
 }
 
 export interface IComicItem {
-    type: string;
+    type: string
 }
 
 export interface IComicCategory extends IComicItem {
-    type: 'category';
-    name: string;
-    url: string;
-    count: number;
-    fixLength?: number;
+    type: 'category'
+    name: string
+    url: string
+    count: number
+    fixLength?: number
 }
 
 export interface IComicRange extends IComicItem {
-    type: 'range';
-    min: number;
-    max: number;
-    fixLength?: number;
+    type: 'range'
+    min: number
+    max: number
+    fixLength?: number
 }

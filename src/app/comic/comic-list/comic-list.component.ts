@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, inject } from '@angular/core';
 
 import { ComicService } from '../comic.service';
 import { IComicList, IComicCategory, IComicRange, IComicItem } from '../IComicList';
@@ -10,11 +10,11 @@ import { IComicList, IComicCategory, IComicRange, IComicItem } from '../IComicLi
     standalone: false
 })
 export class ComicListComponent implements OnInit {
+    private comicService = inject(ComicService);
+
     @Output() public choose: EventEmitter<string[]> = new EventEmitter<string[]>();
     public comicList: IComicList | undefined;
     public activeComic: IComicItem | undefined;
-
-    public constructor(private comicService: ComicService) {}
 
     private static isComicCategory(item: IComicItem): item is IComicCategory {
         return item.type === 'category';

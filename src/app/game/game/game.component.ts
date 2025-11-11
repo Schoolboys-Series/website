@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'scb-game',
@@ -6,8 +6,6 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./game.component.scss'],
     standalone: false
 })
-export class GameComponent implements OnInit {
+export class GameComponent {
     constructor() {}
-
-    ngOnInit() {}
 }

@@ -1,14 +1,14 @@
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 import { IComicList } from './IComicList';
 
 @Injectable()
 export class ComicService {
-    private comicList: IComicList | undefined;
+    private http = inject(HttpClient);
 
-    public constructor(private http: HttpClient) {}
+    private comicList: IComicList | undefined;
 
     public getComicList(): Observable<IComicList> {
         if (this.comicList == null) {
