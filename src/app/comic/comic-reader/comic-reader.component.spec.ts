@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ComicReaderComponent } from './comic-reader.component';
 
@@ -6,12 +6,12 @@ describe('ComicReaderComponent', () => {
   let component: ComicReaderComponent;
   let fixture: ComponentFixture<ComicReaderComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [ ComicReaderComponent ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ComicReaderComponent);
