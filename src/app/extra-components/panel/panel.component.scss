@@ -25,7 +25,16 @@ mat-card {
             justify-content: end;
         }
     }
-    mat-card-content {
+    ::ng-deep mat-card-content {
         padding: 10px;
+        font-family: Roboto, "Helvetica Neue", sans-serif;
+
+        > :first-child {
+            margin-top: 0;
+        }
+
+        p {
+            font-size: 14px;
+        }
     }
 }

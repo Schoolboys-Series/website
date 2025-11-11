@@ -7,10 +7,23 @@
     margin-top: 10px;
     justify-content: center;
 
+    .images {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     img {
+        width: 100%;
         max-width: 500px;
         display: block;
-        align-self: center;
+
+        @media screen and (max-width: variables.$responsive-max-width) {
+            width: 80%;
+            &.banner {
+                display: none;
+            }
+        }
     }
 
     .hint {
@@ -30,7 +43,9 @@
         }
 
         .system-require {
-            width: fit-content;
+            @media screen and (min-width: variables.$responsive-max-width) {
+                width: fit-content;
+            }
 
             scb-panel {
                 display: block;
