@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
@@ -16,7 +19,7 @@ describe('AppComponent', () => {
         expect(app).toBeTruthy();
     });
 
-    it('should have as title \'schoolboys\'', () => {
+    it("should have as title 'schoolboys'", () => {
         const fixture = TestBed.createComponent(AppComponent);
         const app = fixture.debugElement.componentInstance;
         expect(app.title).toEqual('schoolboys');

@@ -57,13 +57,6 @@
         "@typescript-eslint/no-inferrable-types": "off",
         "@typescript-eslint/no-use-before-define": "off",
         "@typescript-eslint/semi": ["error", "always"],
-        "@typescript-eslint/member-delimiter-style": [
-          "error",
-          {
-            "multiline": { "delimiter": "none", "requireLast": true },
-            "singleline": { "delimiter": "semi", "requireLast": false }
-          }
-        ],
         "@typescript-eslint/naming-convention": [
           "error",
           {
@@ -73,7 +66,6 @@
             "trailingUnderscore": "forbid"
           }
         ],
-        "@typescript-eslint/quotes": ["error", "single"],
         "@typescript-eslint/no-unused-expressions": [
           "error",
           { "allowShortCircuit": true }
