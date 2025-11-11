@@ -19,9 +19,17 @@ $schoolboys-accent: mat.m2-define-palette(mat.$m2-green-palette);
 $schoolboys-warn: mat.m2-define-palette(mat.$m2-red-palette);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$schoolboys-theme: mat.m2-define-light-theme((
-    color: (primary: $schoolboys-primary, accent: $schoolboys-accent, warn: $schoolboys-warn)
-));
+$schoolboys-theme: mat.m2-define-light-theme(
+    (
+        color: (
+            primary: $schoolboys-primary,
+            accent: $schoolboys-accent,
+            warn: $schoolboys-warn
+        ),
+        typography: mat.m2-define-typography-config(),
+        density: 0
+    )
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -39,15 +47,21 @@ $color-warn: mat.m2-get-color-from-palette($schoolboys-warn);
 $responsive-min-width: 601px;
 $responsive-max-width: 600px;
 
-html, body { height: 100%; }
-body { margin: 0; font-family: 'Microsoft YaHei UI', sans-serif; }
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: 'Microsoft YaHei UI', sans-serif;
+}
 .flex-placeholder {
     flex: 1 1 auto;
 }
 .clear {
     clear: both;
     display: block;
-    content: "";
+    content: '';
 }
 .background-primary {
     background-color: $color-primary;
@@ -66,12 +80,4 @@ body { margin: 0; font-family: 'Microsoft YaHei UI', sans-serif; }
 }
 .color-warn {
     color: $color-warn;
-}
-
-.mat-card-header-text {
-    padding: 0 10px;
-}
-
-.mat-mdc-list-item-unscoped-content > * {
-    margin: 0;
 }
