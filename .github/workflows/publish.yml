@@ -22,26 +22,29 @@ on:
 env:
   AZURE_WEBAPP_NAME: schoolboys    # set this to your application's name
   AZURE_WEBAPP_PACKAGE_PATH: './dist/schoolboys'      # set this to the path to your web app project, defaults to the repository root
-  NODE_VERSION: '12.x'                # set this to the node version to use
+  NODE_VERSION: '20.x'                # set this to the node version to use
 
 jobs:
   build-and-deploy:
     name: Build and Deploy
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v5
+
     - name: Use Node.js ${{ env.NODE_VERSION }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v6
       with:
         node-version: ${{ env.NODE_VERSION }}
-    - name: npm install and build
-      run: |
-        # Build and test the project, then
-        # deploy to Azure Web App.
-        npm install
-        npm run build_prod
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build project
+      run: npm run build_prod
+
     - name: 'Deploy to Azure WebApp'
-      uses: azure/webapps-deploy@v2
+      uses: azure/webapps-deploy@v3
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
