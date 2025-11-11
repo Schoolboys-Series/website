@@ -1,10 +1,10 @@
-@use "sass:color";
+@use 'sass:color';
 @use '../../../styles/variables';
 
 .comic-list {
     position: absolute;
     overflow-y: auto;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
 
     @media screen and (min-width: variables.$responsive-min-width) {
         width: 250px;
@@ -47,7 +47,7 @@
     }
 
     &:hover {
-        background-color: color.adjust($color: variables.$color-primary, $alpha: -0.8)
+        background-color: color.adjust($color: variables.$color-primary, $alpha: -0.8);
     }
 
     i {
@@ -91,7 +91,7 @@
     .page-number {
         display: block;
         margin: 3px 0 15px 0;
-        color: #A0A0A0;
+        color: #a0a0a0;
         text-align: center;
         font-size: 14px;
     }

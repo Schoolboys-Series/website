@@ -13,7 +13,9 @@ const routes: Routes = [
     { path: 'intro', component: IntroPageComponent },
     { path: 'comic', component: ComicReaderComponent },
     {
-        path: 'game', component: GameComponent, children: [
+        path: 'game',
+        component: GameComponent,
+        children: [
             { path: 'ayumi', component: AyumiComponent },
             { path: 'super_scb', component: SuperScbComponent },
             { path: 'misakisai', component: MisakisaiComponent }
@@ -27,4 +29,4 @@ const routes: Routes = [
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
     standalone: false
 })
 export class AppComponent {
-    public constructor(private router: Router) { }
+    public constructor(private router: Router) {}
 
     public navigateTo(target: string): void {
         switch (target) {

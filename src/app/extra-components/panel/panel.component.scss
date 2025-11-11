@@ -11,9 +11,11 @@ mat-card {
             padding: 6px;
             margin: 0;
         }
-        &.background-primary, &.background-accent, &.background-warn {
+        &.background-primary,
+        &.background-accent,
+        &.background-warn {
             mat-card-title {
-                color: #FFFFFF;
+                color: #ffffff;
             }
         }
         &.align-center {

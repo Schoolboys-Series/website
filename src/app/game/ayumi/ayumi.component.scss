@@ -1,4 +1,4 @@
-@use "sass:color";
+@use 'sass:color';
 @use '../../../styles/variables';
 
 .background {
@@ -6,9 +6,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(to bottom,
-            color.adjust(variables.$color-primary, $lightness: 50%),
-            color.adjust(variables.$color-primary, $lightness: 20%));
+    background-image: linear-gradient(
+        to bottom,
+        color.adjust(variables.$color-primary, $lightness: 50%),
+        color.adjust(variables.$color-primary, $lightness: 20%)
+    );
 }
 
 .downloader {
@@ -67,7 +69,11 @@
         }
 
         .hint {
-            text-shadow: 0 0 5px variables.$color-primary, 0 0 2px variables.$color-primary, 0 0 3px variables.$color-primary, 1px 1px 1px variables.$color-primary;
+            text-shadow:
+                0 0 5px variables.$color-primary,
+                0 0 2px variables.$color-primary,
+                0 0 3px variables.$color-primary,
+                1px 1px 1px variables.$color-primary;
             color: color.adjust(variables.$color-primary, $lightness: 40%);
             text-align: left;
             width: 100%;
@@ -107,11 +113,12 @@
             z-index: 11;
 
             text-align: center;
-            text-shadow: 0 0 5px variables.$color-primary,
+            text-shadow:
+                0 0 5px variables.$color-primary,
                 0 0 2px variables.$color-primary,
                 0 0 3px variables.$color-primary,
                 1px 1px 1px variables.$color-primary;
-            color: #FFFFFF;
+            color: #ffffff;
             width: 100%;
 
             @media (max-width: variables.$responsive-max-width) {
@@ -130,15 +137,23 @@
         .content {
             font-size: 24px;
             text-align: center;
-            text-shadow: 0 0 5px variables.$color-accent, 0 0 2px variables.$color-accent, 0 0 3px variables.$color-accent, 1px 1px 1px variables.$color-accent;
-            color: #FFFFFF;
+            text-shadow:
+                0 0 5px variables.$color-accent,
+                0 0 2px variables.$color-accent,
+                0 0 3px variables.$color-accent,
+                1px 1px 1px variables.$color-accent;
+            color: #ffffff;
         }
 
         .content-blue {
             font-size: 24px;
             text-align: center;
-            text-shadow: 0 0 5px variables.$color-primary, 0 0 2px variables.$color-primary, 0 0 3px variables.$color-primary, 1px 1px 1px variables.$color-primary;
-            color: #FFFFFF;
+            text-shadow:
+                0 0 5px variables.$color-primary,
+                0 0 2px variables.$color-primary,
+                0 0 3px variables.$color-primary,
+                1px 1px 1px variables.$color-primary;
+            color: #ffffff;
             margin: 20px;
         }
 
@@ -147,7 +162,7 @@
             margin: 0;
             padding: 10px;
             text-align: center;
-            color: #FFFFFF;
+            color: #ffffff;
 
             @media (max-width: variables.$responsive-max-width) {
                 width: 60%;
@@ -168,15 +183,21 @@
 
         .description {
             font-size: 18px;
-            color: #FFFFFF;
+            color: #ffffff;
             padding-left: 20px;
 
             &.description-blue {
-                text-shadow: 0 0 2px variables.$color-primary, 0 0 3px variables.$color-primary, 1px 1px 1px variables.$color-primary;
+                text-shadow:
+                    0 0 2px variables.$color-primary,
+                    0 0 3px variables.$color-primary,
+                    1px 1px 1px variables.$color-primary;
             }
 
             &.description-red {
-                text-shadow: 0 0 2px variables.$color-warn, 0 0 3px variables.$color-warn, 1px 1px 1px variables.$color-warn;
+                text-shadow:
+                    0 0 2px variables.$color-warn,
+                    0 0 3px variables.$color-warn,
+                    1px 1px 1px variables.$color-warn;
             }
 
             .small {
@@ -241,8 +262,12 @@
                 display: block;
                 width: 100%;
                 text-align: center;
-                text-shadow: 0 0 5px variables.$color-primary, 0 0 2px variables.$color-primary, 0 0 3px variables.$color-primary, 1px 1px 1px variables.$color-primary;
-                color: #FFFFFF;
+                text-shadow:
+                    0 0 5px variables.$color-primary,
+                    0 0 2px variables.$color-primary,
+                    0 0 3px variables.$color-primary,
+                    1px 1px 1px variables.$color-primary;
+                color: #ffffff;
             }
         }
 

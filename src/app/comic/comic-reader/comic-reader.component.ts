@@ -21,7 +21,9 @@ export class ComicReaderComponent implements OnInit {
     @HostListener('window:scroll', [])
     @HostListener('window:resize', [])
     public onWindowScroll(): void {
-        const distance = (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0) - (window.innerWidth > 600 ? 204 : 106);
+        const distance =
+            (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0) -
+            (window.innerWidth > 600 ? 204 : 106);
         this.anchorListPosition = distance > 0;
         this.comicListHeight = Math.min(window.innerHeight, window.innerHeight + distance);
     }

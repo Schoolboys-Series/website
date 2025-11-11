@@ -12,18 +12,7 @@ import { GameComponent } from './game/game.component';
 
 @NgModule({
     declarations: [AyumiComponent, GameComponent, SuperScbComponent, MisakisaiComponent],
-    imports: [
-        CommonModule,
-        RouterModule,
-        MatListModule,
-        MatButtonModule,
-        ExtraComponentsModule,
-    ],
-    exports: [
-        GameComponent,
-        AyumiComponent,
-        SuperScbComponent,
-        MisakisaiComponent
-    ]
+    imports: [CommonModule, RouterModule, MatListModule, MatButtonModule, ExtraComponentsModule],
+    exports: [GameComponent, AyumiComponent, SuperScbComponent, MisakisaiComponent]
 })
-export class GameModule { }
+export class GameModule {}

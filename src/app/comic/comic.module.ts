@@ -8,13 +8,10 @@ import { ComicReaderComponent } from './comic-reader/comic-reader.component';
 import { ComicService } from './comic.service';
 import { ComicListComponent } from './comic-list/comic-list.component';
 
-@NgModule({ declarations: [ComicReaderComponent, ComicListComponent],
-    exports: [
-        ComicReaderComponent
-    ], imports: [CommonModule,
-        MatListModule,
-        MatButtonModule], providers: [
-        ComicService,
-        provideHttpClient(withInterceptorsFromDi())
-    ] })
-export class ComicModule { }
+@NgModule({
+    declarations: [ComicReaderComponent, ComicListComponent],
+    exports: [ComicReaderComponent],
+    imports: [CommonModule, MatListModule, MatButtonModule],
+    providers: [ComicService, provideHttpClient(withInterceptorsFromDi())]
+})
+export class ComicModule {}

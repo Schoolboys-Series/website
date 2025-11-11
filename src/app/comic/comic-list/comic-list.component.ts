@@ -14,7 +14,7 @@ export class ComicListComponent implements OnInit {
     public comicList: IComicList | undefined;
     public activeComic: IComicItem | undefined;
 
-    public constructor(private comicService: ComicService) { }
+    public constructor(private comicService: ComicService) {}
 
     private static isComicCategory(item: IComicItem): item is IComicCategory {
         return item.type === 'category';
@@ -50,7 +50,7 @@ export class ComicListComponent implements OnInit {
             return;
         }
         if (ComicListComponent.isComicCategory(item)) {
-            for (let i = 0; ++i <= item.count;) {
+            for (let i = 0; ++i <= item.count; ) {
                 const name = this.comicList.categoryNameFormat
                     .replace(/\{url\}/g, item.url)
                     .replace(/\{name\}/g, item.name)
@@ -59,7 +59,7 @@ export class ComicListComponent implements OnInit {
                 result.push(this.comicList.server.replace(/\{name\}/g, name));
             }
         } else if (ComicListComponent.isComicRange(item)) {
-            for (let i = item.min - 1; ++i <= item.max;) {
+            for (let i = item.min - 1; ++i <= item.max; ) {
                 result.push(this.comicList.server.replace(/\{name\}/g, ComicListComponent.fixNumberLength(i, item.fixLength)));
             }
         }

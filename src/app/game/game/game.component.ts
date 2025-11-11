@@ -7,10 +7,7 @@ import { Component, OnInit } from '@angular/core';
     standalone: false
 })
 export class GameComponent implements OnInit {
+    constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+    ngOnInit() {}
 }
