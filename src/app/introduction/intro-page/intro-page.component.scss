@@ -1,4 +1,5 @@
-@import '../../../styles.scss';
+@use "sass:color";
+@use '../../../styles.scss';
 
 @mixin external-button($color) {
     margin-top: 10px;
@@ -13,20 +14,20 @@
     transition-duration: 0.25s;
 
     &:hover {
-        background-color: darken($color: $color, $amount: 10)
+        background-color: color.adjust($color: $color, $lightness: -10%)
     }
 }
 
 :host {
     display: flex;
 
-    @media screen and (max-width: $responsive-max-width) {
+    @media screen and (max-width: styles.$responsive-max-width) {
         flex-direction: column;
     }
 }
 
 .left-area {
-    @media screen and (min-width: $responsive-min-width) {
+    @media screen and (min-width: styles.$responsive-min-width) {
         margin-right: 20px;
     }
 
@@ -36,12 +37,12 @@
         color: #FFFFFF;
         display: block;
 
-        @media screen and (min-width: $responsive-min-width) {
-            background: linear-gradient(to right, $color-primary, $color-primary 85%, adjust-color($color: $color-primary, $alpha: -1) 100%);
+        @media screen and (min-width: styles.$responsive-min-width) {
+            background: linear-gradient(to right, styles.$color-primary, styles.$color-primary 85%, color.adjust($color: styles.$color-primary, $alpha: -1) 100%);
         }
 
-        @media screen and (max-width: $responsive-max-width) {
-            background-color: $color-primary;
+        @media screen and (max-width: styles.$responsive-max-width) {
+            background-color: styles.$color-primary;
         }
     }
 }
@@ -51,14 +52,14 @@
     display: flex;
     flex-direction: column;
 
-    @media screen and (max-width: $responsive-max-width) {
+    @media screen and (max-width: styles.$responsive-max-width) {
         margin-top: 20px;
     }
 
     .about-author {
         min-width: 275px;
 
-        @media screen and (max-width: $responsive-max-width) {
+        @media screen and (max-width: styles.$responsive-max-width) {
             width: 100%;
         }
 
@@ -71,7 +72,7 @@
             .author-avatar {
                 max-width: 150px;
                 border: 1px solid #FFFFFF;
-                box-shadow: 0 0 5px $color-primary;
+                box-shadow: 0 0 5px styles.$color-primary;
                 border-radius: 50%;
             }
 
@@ -79,7 +80,7 @@
                 margin: -18px 0 0 0;
                 border: 1px solid #FFFFFF;
                 border-radius: 20px;
-                background-color: adjust-color($color: $color-primary, $alpha: -0.1);
+                background-color: color.adjust($color: styles.$color-primary, $alpha: -0.1);
                 padding: 5px 15px;
                 color: #FFFFFF;
             }
@@ -107,7 +108,7 @@
 
     .fc2-button,
     .pixiv-button {
-        @include external-button($color-accent);
+        @include external-button(styles.$color-accent);
     }
 
     .enty-button {
@@ -121,11 +122,11 @@
         color: #FFFFFF;
 
         img {
-            @media screen and (min-width: $responsive-min-width) {
+            @media screen and (min-width: styles.$responsive-min-width) {
                 max-width: 290px;
             }
 
-            @media screen and (max-width: $responsive-max-width) {
+            @media screen and (max-width: styles.$responsive-max-width) {
                 width: 100%;
             }
         }

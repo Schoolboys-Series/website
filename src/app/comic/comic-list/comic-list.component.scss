@@ -1,14 +1,14 @@
-@import '../../../styles.scss';
+@use '../../../styles.scss';
 
 mat-list-item {
     cursor: pointer;
 
     &.active ::ng-deep .mat-list-item-content {
-        border-left: 5px solid $color-primary;
-        color: $color-primary;
+        border-left: 5px solid styles.$color-primary;
+        color: styles.$color-primary;
     }
 
     &:hover ::ng-deep .mat-list-item-content {
-        color: $color-primary;
+        color: styles.$color-primary;
     }
 }

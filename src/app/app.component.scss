@@ -1,4 +1,5 @@
-@import '../styles.scss';
+@use "sass:color";
+@use '../styles.scss';
 
 .main-navigator {
     background-image: url('../assets/banner.png');
@@ -6,24 +7,24 @@
     background-size: contain;
     display: flex;
     align-items: center;
-    @media screen and (min-width: $responsive-min-width) {
+    @media screen and (min-width: styles.$responsive-min-width) {
         height: 204px;
     }
-    @media screen and (max-width: $responsive-max-width) {
+    @media screen and (max-width: styles.$responsive-max-width) {
         height: 106px;
     }
-    @media screen and (max-width: 750px) and (min-width: $responsive-min-width) {
+    @media screen and (max-width: 750px) and (min-width: styles.$responsive-min-width) {
         background-size: cover;
     }
     .main-logo {
         position: absolute;
-        @media screen and (min-width: $responsive-min-width) {
+        @media screen and (min-width: styles.$responsive-min-width) {
             top: 6px;
             left: 6px;
             height: 192px;
             width: 192px;
         }
-        @media screen and (max-width: $responsive-max-width) {
+        @media screen and (max-width: styles.$responsive-max-width) {
             top: 3px;
             left: 3px;
             height: 96px;
@@ -31,12 +32,12 @@
         }
     }
     .main-toolbar {
-        background: adjust-color($color: $color-primary, $alpha: -0.1);
+        background: color.adjust($color: styles.$color-primary, $alpha: -0.1);
         .placeholder {
-            @media screen and (min-width: $responsive-min-width) {
+            @media screen and (min-width: styles.$responsive-min-width) {
                 width: 204px;
             }
-            @media screen and (max-width: $responsive-max-width) {
+            @media screen and (max-width: styles.$responsive-max-width) {
                 width: 102px;
             }
         }
