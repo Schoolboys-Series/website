@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 @Component({
     selector: 'scb-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss']
+    styleUrls: ['./app.component.scss'],
+    standalone: false
 })
 export class AppComponent {
     public constructor(private router: Router) { }

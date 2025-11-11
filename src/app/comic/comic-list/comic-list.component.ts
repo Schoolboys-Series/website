@@ -6,7 +6,8 @@ import { IComicList, IComicCategory, IComicRange, IComicItem } from '../IComicLi
 @Component({
     selector: 'scb-comic-list',
     templateUrl: './comic-list.component.html',
-    styleUrls: ['./comic-list.component.scss']
+    styleUrls: ['./comic-list.component.scss'],
+    standalone: false
 })
 export class ComicListComponent implements OnInit {
     @Output() public choose: EventEmitter<string[]> = new EventEmitter<string[]>();

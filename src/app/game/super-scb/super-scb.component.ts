@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'scb-super-scb',
     templateUrl: './super-scb.component.html',
-    styleUrls: ['./super-scb.component.scss']
+    styleUrls: ['./super-scb.component.scss'],
+    standalone: false
 })
 export class SuperScbComponent {
     public download(destination: string): void {

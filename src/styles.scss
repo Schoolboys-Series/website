@@ -1,36 +1,39 @@
 
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@import '~@angular/material/theming';
+@use '@angular/material' as mat;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
-@include mat-core();
+@include mat.elevation-classes();
+@include mat.app-background();
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$schoolboys-primary: mat-palette($mat-blue);
-$schoolboys-accent: mat-palette($mat-green);
+$schoolboys-primary: mat.m2-define-palette(mat.$m2-blue-palette);
+$schoolboys-accent: mat.m2-define-palette(mat.$m2-green-palette);
 
 // The warn palette is optional (defaults to red).
-$schoolboys-warn: mat-palette($mat-red);
+$schoolboys-warn: mat.m2-define-palette(mat.$m2-red-palette);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$schoolboys-theme: mat-light-theme($schoolboys-primary, $schoolboys-accent, $schoolboys-warn);
+$schoolboys-theme: mat.m2-define-light-theme((
+    color: (primary: $schoolboys-primary, accent: $schoolboys-accent, warn: $schoolboys-warn)
+));
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($schoolboys-theme);
+@include mat.all-component-themes($schoolboys-theme);
 
 /* You can add global styles to this file, and also import other style files */
 
-$color-primary: mat-color($schoolboys-primary);
-$color-accent: mat-color($schoolboys-accent);
-$color-warn: mat-color($schoolboys-warn);
+$color-primary: mat.m2-get-color-from-palette($schoolboys-primary);
+$color-accent: mat.m2-get-color-from-palette($schoolboys-accent);
+$color-warn: mat.m2-get-color-from-palette($schoolboys-warn);
 
 /* Responsive */
 
@@ -68,4 +71,8 @@ body { margin: 0; font-family: 'Microsoft YaHei UI', sans-serif; }
 
 .mat-card-header-text {
     padding: 0 10px;
+}
+
+.mat-mdc-list-item-unscoped-content > * {
+    margin: 0;
 }

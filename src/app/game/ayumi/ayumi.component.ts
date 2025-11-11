@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'scb-ayumi',
     templateUrl: './ayumi.component.html',
-    styleUrls: ['./ayumi.component.scss']
+    styleUrls: ['./ayumi.component.scss'],
+    standalone: false
 })
 export class AyumiComponent {
     public characters: string[] = [

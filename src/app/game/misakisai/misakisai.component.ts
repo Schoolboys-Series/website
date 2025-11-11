@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'scb-misakisai',
     templateUrl: './misakisai.component.html',
-    styleUrls: ['./misakisai.component.scss']
+    styleUrls: ['./misakisai.component.scss'],
+    standalone: false
 })
 export class MisakisaiComponent {
     public download(destination: string): void {

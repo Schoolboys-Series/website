@@ -4,7 +4,8 @@ import { ComicListComponent } from '../comic-list/comic-list.component';
 @Component({
     selector: 'scb-comic-reader',
     templateUrl: './comic-reader.component.html',
-    styleUrls: ['./comic-reader.component.scss']
+    styleUrls: ['./comic-reader.component.scss'],
+    standalone: false
 })
 export class ComicReaderComponent implements OnInit {
     @ViewChild('comicList') public comicList: ComicListComponent | undefined;
