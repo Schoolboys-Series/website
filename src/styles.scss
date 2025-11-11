@@ -42,10 +42,6 @@ $color-primary: mat.m2-get-color-from-palette($schoolboys-primary);
 $color-accent: mat.m2-get-color-from-palette($schoolboys-accent);
 $color-warn: mat.m2-get-color-from-palette($schoolboys-warn);
 
-/* Responsive */
-
-$responsive-min-width: 601px;
-$responsive-max-width: 600px;
 
 html,
 body {

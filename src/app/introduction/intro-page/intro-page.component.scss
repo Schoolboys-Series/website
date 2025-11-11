@@ -1,11 +1,11 @@
-@use "sass:color";
-@use '../../../styles.scss';
+@use 'sass:color';
+@use '../../../styles/variables';
 
 @mixin external-button($color) {
     margin-top: 10px;
     padding: 5px 8px 5px 8px;
     background-color: $color;
-    color: #FFFFFF;
+    color: #ffffff;
     border-radius: 3px;
     display: inline-block;
     text-decoration: none;
@@ -14,35 +14,40 @@
     transition-duration: 0.25s;
 
     &:hover {
-        background-color: color.adjust($color: $color, $lightness: -10%)
+        background-color: color.adjust($color: $color, $lightness: -10%);
     }
 }
 
 :host {
     display: flex;
 
-    @media screen and (max-width: styles.$responsive-max-width) {
+    @media screen and (max-width: variables.$responsive-max-width) {
         flex-direction: column;
     }
 }
 
 .left-area {
-    @media screen and (min-width: styles.$responsive-min-width) {
+    @media screen and (min-width: variables.$responsive-min-width) {
         margin-right: 20px;
     }
 
     .title {
         margin: 0;
         padding: 10px 10px 10px 20px;
-        color: #FFFFFF;
+        color: #ffffff;
         display: block;
 
-        @media screen and (min-width: styles.$responsive-min-width) {
-            background: linear-gradient(to right, styles.$color-primary, styles.$color-primary 85%, color.adjust($color: styles.$color-primary, $alpha: -1) 100%);
+        @media screen and (min-width: variables.$responsive-min-width) {
+            background: linear-gradient(
+                to right,
+                variables.$color-primary,
+                variables.$color-primary 85%,
+                color.adjust($color: variables.$color-primary, $alpha: -1) 100%
+            );
         }
 
-        @media screen and (max-width: styles.$responsive-max-width) {
-            background-color: styles.$color-primary;
+        @media screen and (max-width: variables.$responsive-max-width) {
+            background-color: variables.$color-primary;
         }
     }
 }
@@ -52,14 +57,14 @@
     display: flex;
     flex-direction: column;
 
-    @media screen and (max-width: styles.$responsive-max-width) {
+    @media screen and (max-width: variables.$responsive-max-width) {
         margin-top: 20px;
     }
 
     .about-author {
         min-width: 275px;
 
-        @media screen and (max-width: styles.$responsive-max-width) {
+        @media screen and (max-width: variables.$responsive-max-width) {
             width: 100%;
         }
 
@@ -71,18 +76,18 @@
 
             .author-avatar {
                 max-width: 150px;
-                border: 1px solid #FFFFFF;
-                box-shadow: 0 0 5px styles.$color-primary;
+                border: 1px solid #ffffff;
+                box-shadow: 0 0 5px variables.$color-primary;
                 border-radius: 50%;
             }
 
             .author-name {
                 margin: -18px 0 0 0;
-                border: 1px solid #FFFFFF;
+                border: 1px solid #ffffff;
                 border-radius: 20px;
-                background-color: color.adjust($color: styles.$color-primary, $alpha: -0.1);
+                background-color: color.adjust($color: variables.$color-primary, $alpha: -0.1);
                 padding: 5px 15px;
-                color: #FFFFFF;
+                color: #ffffff;
             }
 
             .author-intro {
@@ -108,25 +113,25 @@
 
     .fc2-button,
     .pixiv-button {
-        @include external-button(styles.$color-accent);
+        @include external-button(variables.$color-accent);
     }
 
     .enty-button {
-        @include external-button(#5962FF);
+        @include external-button(#5962ff);
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 0;
-        border: 1px solid #5962FF;
+        border: 1px solid #5962ff;
         overflow: hidden;
-        color: #FFFFFF;
+        color: #ffffff;
 
         img {
-            @media screen and (min-width: styles.$responsive-min-width) {
+            @media screen and (min-width: variables.$responsive-min-width) {
                 max-width: 290px;
             }
 
-            @media screen and (max-width: styles.$responsive-max-width) {
+            @media screen and (max-width: variables.$responsive-max-width) {
                 width: 100%;
             }
         }

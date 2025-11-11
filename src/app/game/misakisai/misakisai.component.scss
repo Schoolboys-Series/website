@@ -1,5 +1,5 @@
 @use "sass:color";
-@use '../../../styles.scss';
+@use '../../../styles/variables';
 
 .content {
     display: flex;
@@ -25,7 +25,7 @@
     }
 
     .description {
-        @media screen and (min-width: styles.$responsive-min-width) {
+        @media screen and (min-width: variables.$responsive-min-width) {
             margin: 0 0 0 20px;
         }
 
