@@ -1,60 +1,6 @@
 <div class="flex-placeholder left-area">
     <p class="title">游戏第一作：《SCHOOL BOYS!-夢の御咲祭編》汉化正式版已于10月13日重磅推出！</p>
-    <div class="content">
-        <div class="images">
-            <img alt="Poster" src="assets/misakisai_poster.jpg" />
-            <img alt="Banner" src="assets/misakisai_banner.jpg" />
-        </div>
-        <div class="description">
-            <p>系列游戏第一作，纪念 2GYMNO SCHOOL BOYS! 两周年作品。<br />上班族诹访部翔平吃下了神秘少年给的药后，发现自己居然…变回了中学时代的样子！<br />攻略少年们的故事，就此展开序幕…</p>
-            <div class="system-require">
-                <scb-panel title="基本信息" color="accent">
-                    <mat-list>
-                        <mat-list-item>
-                            <h4 mat-line>类型</h4>
-                            <p mat-line>视觉小说/文字冒险游戏</p>
-                        </mat-list-item>
-                        <mat-list-item>
-                            <h4 mat-line>游戏时长</h4>
-                            <p mat-line>4~6小时</p>
-                        </mat-list-item>
-                        <mat-list-item>
-                            <h4 mat-line>理想分辨率</h4>
-                            <p mat-line>800 x 600</p>
-                        </mat-list-item>
-                        <mat-list-item>
-                            <h4 mat-line>发布日期</h4>
-                            <p mat-line>2012年12月27日</p>
-                        </mat-list-item>
-                    </mat-list>
-                </scb-panel>
-                <scb-panel title="系统需求" color="accent">
-                    <mat-list>
-                        <mat-list-item>
-                            <h4 mat-line>操作系统</h4>
-                            <p mat-line>Windows 98及以上</p>
-                        </mat-list-item>
-                        <mat-list-item>
-                            <h4 mat-line>磁盘空间</h4>
-                            <p mat-line>403 MB</p>
-                        </mat-list-item>
-                        <mat-list-item>
-                            <h4 mat-line>显示与声音</h4>
-                            <p mat-line>任意</p>
-                        </mat-list-item>
-                        <mat-list-item>
-                            <h4 mat-line>其他</h4>
-                            <p mat-line>通过Freem下载为日文版，其余为中文版</p>
-                        </mat-list-item>
-                    </mat-list>
-                </scb-panel>
-                <button mat-raised-button color="accent" class="download"
-                    (click)="download('freem')">前往Freem!下载</button>
-                <button mat-raised-button color="accent" class="download" (click)="download('baidu')">前往百度网盘下载
-                    (解压码：YSG)</button>
-            </div>
-        </div>
-    </div>
+    <scb-misakisai></scb-misakisai>
 </div>
 <div class="right-area">
     <scb-panel title="关于作者" titleAlign="center" color="primary" class="about-author">
