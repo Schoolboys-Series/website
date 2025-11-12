@@ -59,4 +59,10 @@ scb-panel {
 
 .advertisement {
     min-width: 200px;
+
+    @media screen and (max-width: variables.$responsive-max-width) {
+        img {
+            width: 100%;
+        }
+    }
 }

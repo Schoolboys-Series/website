@@ -19,22 +19,27 @@ $schoolboys-accent: mat.m2-define-palette(mat.$m2-green-palette);
 $schoolboys-warn: mat.m2-define-palette(mat.$m2-red-palette);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$schoolboys-theme: mat.m2-define-light-theme(
-    (
-        color: (
-            primary: $schoolboys-primary,
-            accent: $schoolboys-accent,
-            warn: $schoolboys-warn
-        ),
-        typography: mat.m2-define-typography-config(),
-        density: 0
-    )
+$schoolboys-theme-data: (
+    color: (
+        primary: $schoolboys-primary,
+        accent: $schoolboys-accent,
+        warn: $schoolboys-warn
+    ),
+    typography: mat.m2-define-typography-config(),
+    density: 0
 );
+$schoolboys-theme-light: mat.m2-define-light-theme($schoolboys-theme-data);
+$schoolboys-theme-dark: mat.m2-define-dark-theme($schoolboys-theme-data);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($schoolboys-theme);
+html {
+    @include mat.all-component-themes($schoolboys-theme-light);
+    @media (prefers-color-scheme: dark) {
+        @include mat.all-component-colors($schoolboys-theme-dark);
+    }
+}
 
 /* You can add global styles to this file, and also import other style files */
 
@@ -42,12 +47,17 @@ $color-primary: mat.m2-get-color-from-palette($schoolboys-primary);
 $color-accent: mat.m2-get-color-from-palette($schoolboys-accent);
 $color-warn: mat.m2-get-color-from-palette($schoolboys-warn);
 
+:root {
+    color-scheme: light dark !important;
+}
+
 html,
 body {
     height: 100%;
 }
 body {
     margin: 0;
+    background: var(--mat-app-background-color);
     font-family: 'Microsoft YaHei UI', sans-serif;
 }
 .flex-placeholder {
@@ -75,4 +85,17 @@ body {
 }
 .color-warn {
     color: $color-warn;
+}
+
+
+.dark-only {
+    display: none;
+}
+@media (prefers-color-scheme: dark) {
+    .light-only {
+        display: none;
+    }
+    .dark-only {
+        display: initial;
+    }
 }

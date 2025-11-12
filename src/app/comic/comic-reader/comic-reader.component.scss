@@ -4,7 +4,7 @@
 .comic-list {
     position: absolute;
     overflow-y: auto;
-    background-color: #ffffff;
+    background-color: var(--mat-app-background-color);
 
     @media screen and (min-width: variables.$responsive-min-width) {
         width: 250px;
