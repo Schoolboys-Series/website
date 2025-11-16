@@ -7,13 +7,7 @@ import { AddonComponent } from './addon/addon.component';
 
 @NgModule({
     declarations: [AddonComponent],
-    imports: [
-        CommonModule,
-        MatButtonModule,
-        ExtraComponentsModule
-    ],
-    exports: [
-        AddonComponent
-    ]
+    imports: [CommonModule, MatButtonModule, ExtraComponentsModule],
+    exports: [AddonComponent]
 })
-export class AddonModule { }
+export class AddonModule {}

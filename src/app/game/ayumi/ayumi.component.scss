@@ -1,11 +1,16 @@
-@import '../../../styles.scss';
+@use 'sass:color';
+@use '../../../styles/variables';
 
 .background {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(to bottom, lighten($color-primary, 50%), lighten($color-primary, 20%));
+    background-image: linear-gradient(
+        to bottom,
+        color.adjust(variables.$color-primary, $lightness: 50%),
+        color.adjust(variables.$color-primary, $lightness: 20%)
+    );
 }
 
 .downloader {
@@ -14,13 +19,13 @@
     align-items: center;
     justify-content: center;
 
-    @media screen and (min-width: $responsive-min-width) {
+    @media screen and (min-width: variables.$responsive-min-width) {
         width: 80%;
         max-width: 1024px;
         min-width: 300px;
     }
 
-    @media screen and (max-width: $responsive-max-width) {
+    @media screen and (max-width: variables.$responsive-max-width) {
         width: 100%;
         flex-direction: column;
     }
@@ -29,20 +34,26 @@
         margin: 0 10px 0 10px;
         max-width: 200px;
     }
+
+    .dead-link {
+        opacity: 0.4;
+        filter: grayscale(80%);
+        cursor: not-allowed;
+    }
 }
 
 .container {
-    box-shadow: 0 0 5px $color-primary;
+    box-shadow: 0 0 5px variables.$color-primary;
     border-radius: 5px;
     overflow: hidden;
 
-    @media screen and (min-width: $responsive-min-width) {
+    @media screen and (min-width: variables.$responsive-min-width) {
         width: 80%;
         max-width: 1024px;
         min-width: 300px;
     }
 
-    @media screen and (max-width: $responsive-max-width) {
+    @media screen and (max-width: variables.$responsive-max-width) {
         width: 100%;
     }
 
@@ -58,23 +69,26 @@
         }
 
         .hint {
-            text-shadow: 0 0 5px $color-primary, 0 0 2px $color-primary, 0 0 3px $color-primary, 1px 1px 1px $color-primary;
-            color: lighten($color-primary, 40%);
+            text-shadow:
+                0 0 5px variables.$color-primary,
+                0 0 2px variables.$color-primary,
+                0 0 3px variables.$color-primary,
+                1px 1px 1px variables.$color-primary;
+            color: color.adjust(variables.$color-primary, $lightness: 40%);
             text-align: left;
             width: 100%;
             padding-left: 50px;
+            margin-bottom: 10px;
 
-            @media (max-width: $responsive-max-width) {
+            @media (max-width: variables.$responsive-max-width) {
                 margin-top: 80px;
                 font-size: 20px;
             }
 
-            @media (min-width: $responsive-min-width) {
+            @media (min-width: variables.$responsive-min-width) {
                 margin-top: 120px;
                 font-size: 40px;
             }
-
-            margin-bottom: 10px;
         }
 
         .step {
@@ -82,38 +96,38 @@
             background-repeat: repeat-x;
             width: 1600px;
             height: 40px;
+            transform: rotate(-20deg);
+            opacity: 0.3;
 
-            @media (max-width: $responsive-max-width) {
+            @media (max-width: variables.$responsive-max-width) {
                 margin-top: 150px;
             }
 
-            @media (min-width: $responsive-min-width) {
+            @media (min-width: variables.$responsive-min-width) {
                 margin-top: 300px;
             }
-
-            transform: rotate(-20deg);
-            opacity: 0.3;
         }
 
         .content {
             position: absolute;
             z-index: 11;
 
-            @media (max-width: $responsive-max-width) {
+            text-align: center;
+            text-shadow:
+                0 0 5px variables.$color-primary,
+                0 0 2px variables.$color-primary,
+                0 0 3px variables.$color-primary,
+                1px 1px 1px variables.$color-primary;
+            color: #ffffff;
+            width: 100%;
+
+            @media (max-width: variables.$responsive-max-width) {
                 font-size: 16px;
             }
 
-            @media (min-width: $responsive-min-width) {
+            @media (min-width: variables.$responsive-min-width) {
                 font-size: 24px;
             }
-
-            text-align: center;
-            text-shadow: 0 0 5px $color-primary,
-            0 0 2px $color-primary,
-            0 0 3px $color-primary,
-            1px 1px 1px $color-primary;
-            color: #FFFFFF;
-            width: 100%;
         }
     }
 
@@ -123,15 +137,23 @@
         .content {
             font-size: 24px;
             text-align: center;
-            text-shadow: 0 0 5px $color-accent, 0 0 2px $color-accent, 0 0 3px $color-accent, 1px 1px 1px $color-accent;
-            color: #FFFFFF;
+            text-shadow:
+                0 0 5px variables.$color-accent,
+                0 0 2px variables.$color-accent,
+                0 0 3px variables.$color-accent,
+                1px 1px 1px variables.$color-accent;
+            color: #ffffff;
         }
 
         .content-blue {
             font-size: 24px;
             text-align: center;
-            text-shadow: 0 0 5px $color-primary, 0 0 2px $color-primary, 0 0 3px $color-primary, 1px 1px 1px $color-primary;
-            color: #FFFFFF;
+            text-shadow:
+                0 0 5px variables.$color-primary,
+                0 0 2px variables.$color-primary,
+                0 0 3px variables.$color-primary,
+                1px 1px 1px variables.$color-primary;
+            color: #ffffff;
             margin: 20px;
         }
 
@@ -140,36 +162,42 @@
             margin: 0;
             padding: 10px;
             text-align: center;
-            color: #FFFFFF;
+            color: #ffffff;
 
-            @media (max-width: $responsive-max-width) {
+            @media (max-width: variables.$responsive-max-width) {
                 width: 60%;
             }
 
-            @media (min-width: $responsive-min-width) {
+            @media (min-width: variables.$responsive-min-width) {
                 width: 30%;
             }
 
             &.label-blue {
-                background-image: linear-gradient(to right, $color-primary, $color-primary, rgba(0, 0, 0, 0));
+                background-image: linear-gradient(to right, variables.$color-primary, variables.$color-primary, rgba(0, 0, 0, 0));
             }
 
             &.label-red {
-                background-image: linear-gradient(to right, $color-warn, $color-warn, rgba(0, 0, 0, 0));
+                background-image: linear-gradient(to right, variables.$color-warn, variables.$color-warn, rgba(0, 0, 0, 0));
             }
         }
 
         .description {
             font-size: 18px;
-            color: #FFFFFF;
+            color: #ffffff;
             padding-left: 20px;
 
             &.description-blue {
-                text-shadow: 0 0 2px $color-primary, 0 0 3px $color-primary, 1px 1px 1px $color-primary;
+                text-shadow:
+                    0 0 2px variables.$color-primary,
+                    0 0 3px variables.$color-primary,
+                    1px 1px 1px variables.$color-primary;
             }
 
             &.description-red {
-                text-shadow: 0 0 2px $color-warn, 0 0 3px $color-warn, 1px 1px 1px $color-warn;
+                text-shadow:
+                    0 0 2px variables.$color-warn,
+                    0 0 3px variables.$color-warn,
+                    1px 1px 1px variables.$color-warn;
             }
 
             .small {
@@ -181,19 +209,19 @@
             margin-bottom: 50px;
 
             &.gallery-blue {
-                box-shadow: 0 0 8px $color-primary;
+                box-shadow: 0 0 8px variables.$color-primary;
             }
 
             &.gallery-red {
-                box-shadow: 0 0 8px $color-warn;
+                box-shadow: 0 0 8px variables.$color-warn;
             }
 
             &.gallery-retina {
-                @media (max-width: $responsive-max-width) {
+                @media (max-width: variables.$responsive-max-width) {
                     width: 720px;
                 }
 
-                @media (min-width: $responsive-min-width) {
+                @media (min-width: variables.$responsive-min-width) {
                     width: 1080px;
                 }
             }
@@ -212,19 +240,19 @@
                 padding: 10px;
             }
 
-            @media (max-width: $responsive-max-width) {
+            @media (max-width: variables.$responsive-max-width) {
                 padding: 0;
                 margin: 0;
                 border: 0;
             }
 
             img {
-                @media (max-width: $responsive-max-width) {
+                @media (max-width: variables.$responsive-max-width) {
                     width: 90px;
                     height: 90px;
                 }
 
-                @media (min-width: $responsive-min-width) {
+                @media (min-width: variables.$responsive-min-width) {
                     width: 185px;
                     height: 185px;
                 }
@@ -234,8 +262,12 @@
                 display: block;
                 width: 100%;
                 text-align: center;
-                text-shadow: 0 0 5px $color-primary, 0 0 2px $color-primary, 0 0 3px $color-primary, 1px 1px 1px $color-primary;
-                color: #FFFFFF;
+                text-shadow:
+                    0 0 5px variables.$color-primary,
+                    0 0 2px variables.$color-primary,
+                    0 0 3px variables.$color-primary,
+                    1px 1px 1px variables.$color-primary;
+                color: #ffffff;
             }
         }
 

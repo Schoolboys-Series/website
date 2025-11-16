@@ -1,11 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GameComponent } from './game.component';
+import { MisakisaiComponent } from './misakisai.component';
 import { GameModule } from '../game.module';
 
-describe('GameComponent', () => {
-    let component: GameComponent;
-    let fixture: ComponentFixture<GameComponent>;
+describe('MisakisaiComponent', () => {
+    let component: MisakisaiComponent;
+    let fixture: ComponentFixture<MisakisaiComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
@@ -14,7 +14,7 @@ describe('GameComponent', () => {
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(GameComponent);
+        fixture = TestBed.createComponent(MisakisaiComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

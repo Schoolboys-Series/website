@@ -1,25 +1,25 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AyumiComponent } from './ayumi.component';
+import { GameModule } from '../game.module';
 
 describe('AyumiComponent', () => {
-  let component: AyumiComponent;
-  let fixture: ComponentFixture<AyumiComponent>;
+    let component: AyumiComponent;
+    let fixture: ComponentFixture<AyumiComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ AyumiComponent ]
-    })
-    .compileComponents();
-  }));
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            imports: [GameModule]
+        }).compileComponents();
+    });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(AyumiComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(AyumiComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

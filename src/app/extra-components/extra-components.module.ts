@@ -5,15 +5,8 @@ import { NgModule } from '@angular/core';
 import { PanelComponent } from './panel/panel.component';
 
 @NgModule({
-    declarations: [
-        PanelComponent
-    ],
-    imports: [
-        CommonModule,
-        MatCardModule
-    ],
-    exports: [
-        PanelComponent
-    ]
+    declarations: [PanelComponent],
+    imports: [CommonModule, MatCardModule],
+    exports: [PanelComponent]
 })
-export class ExtraComponentsModule { }
+export class ExtraComponentsModule {}

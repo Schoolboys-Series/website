@@ -1,14 +1,18 @@
-@import '../../../styles.scss';
+@use '../../../styles/variables';
 
 mat-list-item {
-    cursor: pointer;
-
-    &.active ::ng-deep .mat-list-item-content {
-        border-left: 5px solid $color-primary;
-        color: $color-primary;
+    ::ng-deep .mat-mdc-list-item-unscoped-content {
+        white-space: normal;
     }
 
-    &:hover ::ng-deep .mat-list-item-content {
-        color: $color-primary;
+    &.active {
+        border-left: 5px solid variables.$color-primary;
+    }
+
+    &.active,
+    &:hover {
+        ::ng-deep .mat-mdc-list-item-unscoped-content {
+            color: variables.$color-primary;
+        }
     }
 }

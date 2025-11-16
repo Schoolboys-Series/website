@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, inject } from '@angular/core';
 
 import { ComicService } from '../comic.service';
 import { IComicList, IComicCategory, IComicRange, IComicItem } from '../IComicList';
@@ -6,14 +6,15 @@ import { IComicList, IComicCategory, IComicRange, IComicItem } from '../IComicLi
 @Component({
     selector: 'scb-comic-list',
     templateUrl: './comic-list.component.html',
-    styleUrls: ['./comic-list.component.scss']
+    styleUrls: ['./comic-list.component.scss'],
+    standalone: false
 })
 export class ComicListComponent implements OnInit {
+    private comicService = inject(ComicService);
+
     @Output() public choose: EventEmitter<string[]> = new EventEmitter<string[]>();
     public comicList: IComicList | undefined;
     public activeComic: IComicItem | undefined;
-
-    public constructor(private comicService: ComicService) { }
 
     private static isComicCategory(item: IComicItem): item is IComicCategory {
         return item.type === 'category';
@@ -49,7 +50,7 @@ export class ComicListComponent implements OnInit {
             return;
         }
         if (ComicListComponent.isComicCategory(item)) {
-            for (let i = 0; ++i <= item.count;) {
+            for (let i = 0; ++i <= item.count; ) {
                 const name = this.comicList.categoryNameFormat
                     .replace(/\{url\}/g, item.url)
                     .replace(/\{name\}/g, item.name)
@@ -58,7 +59,7 @@ export class ComicListComponent implements OnInit {
                 result.push(this.comicList.server.replace(/\{name\}/g, name));
             }
         } else if (ComicListComponent.isComicRange(item)) {
-            for (let i = item.min - 1; ++i <= item.max;) {
+            for (let i = item.min - 1; ++i <= item.max; ) {
                 result.push(this.comicList.server.replace(/\{name\}/g, ComicListComponent.fixNumberLength(i, item.fixLength)));
             }
         }

@@ -1,4 +1,4 @@
-@import '../../../styles.scss';
+@use '../../../styles/variables';
 
 :host {
     display: block;
@@ -8,26 +8,26 @@
 .container {
     display: flex;
 
-    @media screen and (max-width: $responsive-max-width) {
+    @media screen and (max-width: variables.$responsive-max-width) {
         flex-direction: column;
     }
 }
 
 .right-area {
-    @media screen and (min-width: $responsive-min-width) {
+    @media screen and (min-width: variables.$responsive-min-width) {
         margin-left: 20px;
     }
 
     img {
-        @media screen and (min-width: $responsive-min-width) {
+        @media screen and (min-width: variables.$responsive-min-width) {
             max-width: 40vw;
+            max-height: 60vh;
         }
-        @media screen and (max-width: $responsive-max-width) {
+        @media screen and (max-width: variables.$responsive-max-width) {
             max-width: calc(100vw - 40px);
         }
     }
 }
-
 
 scb-panel {
     display: block;
@@ -39,7 +39,7 @@ scb-panel {
     }
 
     .source-code {
-        @media screen and (max-width: $responsive-max-width) {
+        @media screen and (max-width: variables.$responsive-max-width) {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -59,4 +59,10 @@ scb-panel {
 
 .advertisement {
     min-width: 200px;
+
+    @media screen and (max-width: variables.$responsive-max-width) {
+        img {
+            width: 100%;
+        }
+    }
 }

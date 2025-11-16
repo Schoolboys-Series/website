@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'scb-panel',
-  templateUrl: './panel.component.html',
-  styleUrls: ['./panel.component.scss']
+    selector: 'scb-panel',
+    templateUrl: './panel.component.html',
+    styleUrls: ['./panel.component.scss'],
+    standalone: false
 })
 export class PanelComponent {
     @Input() public title: string | undefined;

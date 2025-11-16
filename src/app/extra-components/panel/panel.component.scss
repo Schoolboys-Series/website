@@ -1,4 +1,4 @@
-@import '../../../styles.scss';
+@use '../../../styles/variables';
 
 mat-card {
     padding: 0;
@@ -11,9 +11,11 @@ mat-card {
             padding: 6px;
             margin: 0;
         }
-        &.background-primary, &.background-accent, &.background-warn {
+        &.background-primary,
+        &.background-accent,
+        &.background-warn {
             mat-card-title {
-                color: #FFFFFF;
+                color: #ffffff;
             }
         }
         &.align-center {
@@ -23,7 +25,16 @@ mat-card {
             justify-content: end;
         }
     }
-    mat-card-content {
+    ::ng-deep mat-card-content {
         padding: 10px;
+        font-family: Roboto, "Helvetica Neue", sans-serif;
+
+        > :first-child {
+            margin-top: 0;
+        }
+
+        p {
+            font-size: 14px;
+        }
     }
 }

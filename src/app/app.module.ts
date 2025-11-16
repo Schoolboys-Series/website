@@ -15,9 +15,7 @@ import { GameModule } from './game/game.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
-    declarations: [
-        AppComponent
-    ],
+    declarations: [AppComponent],
     imports: [
         GameModule,
         AddonModule,
@@ -34,4 +32,4 @@ import { AppComponent } from './app.component';
     providers: [],
     bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
