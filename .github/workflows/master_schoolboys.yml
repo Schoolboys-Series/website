@@ -32,7 +32,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: ./dist/schooboys
+          path: ./dist/schoolboys
 
   deploy:
     runs-on: ubuntu-latest
